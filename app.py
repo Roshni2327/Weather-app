@@ -53,13 +53,19 @@ def forecast():
     if data.get('cod') != '200':
         return "City not found", 404
 
-    forecast_info = []
+    # Initialize an empty dictionary to store forecasts
+    daily_forecast = {}
     for item in data['list']:
-        forecast_info.append({
-            'date': item['dt_txt'],
-            'temperature': item['main']['temp'],
-            'description': item['weather'][0]['description']
-        })
+        date = item['dt_txt'].split(' ')[0]  # Extract the date from the timestamp
+        if date not in daily_forecast:
+            daily_forecast[date] = {
+                'date': date,
+                'temperature': item['main']['temp'],
+                'description': item['weather'][0]['description']
+            }
+    
+    # Convert the dictionary to a list for rendering
+    forecast_info = list(daily_forecast.values())
     
     return render_template('forecast.html', forecast=forecast_info)
 
