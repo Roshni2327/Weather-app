@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Forecast Results - Weather App
+{% endblock %}
+
+{% block content %}
+<h1>Weather Forecast</h1>
+{% if forecast %}
+    <div class="forecast-container">
+        {% for day in forecast %}
+        <div class="forecast-day">
+            <p>Date: {{ day.date }}</p>
+            <p>Temperature: {{ day.temperature }} °C</p>
+            <p>Description: {{ day.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>No forecast available. Please try again.</p>
+{% endif %}
+<br>
+<a href="/">Back to Home</a>
+{% endblock %}
