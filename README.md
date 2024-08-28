@@ -1,5 +1,6 @@
 Weather App
 Description
+
 Welcome to the Weather App! This project provides a simple and user-friendly interface to access current weather information and a 5-day forecast for any city around the world. The app leverages the OpenWeatherMap API to fetch weather data and the TimeZoneDB API to display the current local time for the selected city.
 
 Features
