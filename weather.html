@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Weather Information</h1>
+    <p>City: {{ weather.city }}</p>
+    <p>Temperature: {{ weather.temperature }} °C</p>
+    <p>Description: {{ weather.description }}</p>
+     <img src="http://openweathermap.org/img/wn/{{ weather.icon }}.png" alt="Weather Icon">
+    <a href="/">Back to Home</a>
+</body>
+</html>
+
